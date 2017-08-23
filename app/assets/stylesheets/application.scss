@@ -1,0 +1,31 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url('pexels-photo-192940.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1.0;
+}
+#midValue {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+#nav {
+  position: fixed;
+  top: 10%;
+  left: 85%;
+  margin-top: -50px;
+  margin-right: -1px;
+}
+.img {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
