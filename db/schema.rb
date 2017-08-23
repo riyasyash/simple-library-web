@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170823121030) do
+ActiveRecord::Schema.define(version: 20170823182255) do
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.string "authors"
+    t.string "publisher"
+    t.string "yop"
+    t.text "description"
+    t.integer "page_count"
+    t.string "small_thumbnail"
+    t.string "thumbnail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "isbn"
+    t.integer "total_count"
+    t.integer "available"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider"
