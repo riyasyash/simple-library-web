@@ -13,7 +13,7 @@ class Book < ApplicationRecord
     book.title = book_hash["items"][0]["volumeInfo"]["title"]
     book.subtitle = book_hash["items"][0]["volumeInfo"]["subtitle"]
     authors = ""
-    book.authors = book_hash["items"][0]["volumeInfo"]["authors"].each { |author| authors+=author+',' }
+    book.authors = book_hash["items"][0]["volumeInfo"]["authors"].join(',')
     book.publisher = book_hash["items"][0]["volumeInfo"]["publisher"]
     book.yop = book_hash["items"][0]["volumeInfo"]["publishedDate"]
     book.description = book_hash["items"][0]["volumeInfo"]["description"]

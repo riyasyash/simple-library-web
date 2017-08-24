@@ -10,7 +10,7 @@ class BooksController < ApplicationController
     book_hash = JSON.parse(body)
     book = Book.add_to_library(isbn,count,book_hash)
     respond_to do |format|
-      format.all  { render :json => book.to_json }
+      format.json  { render :json => book.to_json }
     end
   end
 
