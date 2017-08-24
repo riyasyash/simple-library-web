@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   get 'index', to: 'home#index', as: 'index'
+  get 'dashboard', to: 'home#dashboard', as:'dashboard'
 
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]

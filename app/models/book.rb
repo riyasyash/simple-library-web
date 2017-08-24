@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
+
   self.primary_key = "isbn"
 
   def self.add_to_library(isbn,count,book_hash)
