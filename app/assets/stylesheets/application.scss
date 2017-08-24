@@ -9,7 +9,10 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 1.0;
+  opacity: 0.9;
+}
+#loading {
+  content: url('Bars.gif');
 }
 #midValue {
   position: fixed;
@@ -25,7 +28,8 @@
   margin-top: -50px;
   margin-right: -1px;
 }
-.img {
-    opacity: 0.5;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
+#bookThumbnail {
+  position: relative;
+  float: left;
+  overflow: hidden;
 }
