@@ -3,6 +3,8 @@ require "json"
 
 class BooksController < ApplicationController
 
+  before_action :check_sign_in
+
   def create
     isbn = params["isbn"]
     count = params["count"].to_i
