@@ -4,13 +4,15 @@
 #bg {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   background-image: url('pexels-photo-192940.jpeg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   opacity: 0.9;
 }
+
 #loading {
   content: url('Bars.gif');
 }
@@ -21,6 +23,11 @@
   margin-top: -50px;
   margin-left: -100px;
 }
+#bookThumbnail {
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
 #nav {
   position: fixed;
   top: 10%;
@@ -28,24 +35,47 @@
   margin-top: -50px;
   margin-right: -1px;
 }
-#bookThumbnail {
-  position: relative;
-  float: left;
-  overflow: hidden;
-}
-.navbar {
-   background-color: transparent;
-   background: transparent;
-   border-color: transparent;
-}
 
 #controls{ color: #000 ;
   position: center;
   align-items: center;
   text-align: center;
 }
-.dropdown-menu {
-  position: center;
-  align-items: center;
-  text-align: center;
+#grid {
+
+  * {margin: 0; padding: 0;}
+
+  div {
+    margin: 20%;
+  }
+
+  ul {
+    list-style-type: none;
+    width: 70%;
+  }
+
+  h3 {
+    font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+  }
+
+  li img {
+    float: left;
+    margin: 0 15px 0 0;
+  }
+
+  li p {
+    font: 200 12px/1.5 Georgia, Times New Roman, serif;
+  }
+
+  li {
+    padding: 10px;
+    overflow: auto;
+  }
+
+  li:hover {
+    background: #eee;
+    cursor: pointer;
+  }
+  z-index: 1;
+  position: absolute;
 }

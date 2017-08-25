@@ -1,1 +1,14 @@
-Hai
+<button id="home" class="btn btn-primary dropdown-toggle" type="button">
+  <span class="glyphicon glyphicon-home" aria-hidden="true"> Home </span>
+</button>
+ <div id="grid">
+  <% @books.each do |books| %>
+  <ul>
+    <li>
+      <img src="<%=books.small_thumbnail%>" />
+      <h3><%=books.title%></h3>
+      <p><%=books.available%></p>
+    </li>
+  </ul>
+  <%end%>
+</div>

@@ -17,5 +17,6 @@ class BooksController < ApplicationController
   end
 
   def list
+    @books = Book.all
   end
 end
