@@ -28,4 +28,20 @@ class Book < ApplicationRecord
 
     return book
   end
+
+  def checkout(user)
+    begin
+      if self.available > 0
+        self.available -= 1
+        self.save
+        user.books << self
+        return 'successfuly checked out',200
+      else
+        return 'book not available',404
+      end
+    rescue
+        return 'error occured during checkout',400
+    end
+  end
+
 end

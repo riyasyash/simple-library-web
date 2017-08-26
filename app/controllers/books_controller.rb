@@ -19,4 +19,19 @@ class BooksController < ApplicationController
   def list
     @books = Book.all
   end
+
+  def request_book
+    redirect_to '/dashboard'
+  end
+
+  def checkout
+    isbn = params[:isbn]
+    book = Book.find_by_isbn(isbn)
+    if book
+      response,status = book.checkout(current_user)
+    else
+      response,status = 'Book not found',404
+    end
+    redirect_to '/dashboard'
+  end
 end
