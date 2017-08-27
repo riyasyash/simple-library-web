@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def dashboard
+    @books=current_user.books
   end
 
   def index

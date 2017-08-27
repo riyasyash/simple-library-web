@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170824192434) do
   create_table "books_users", id: false, force: :cascade do |t|
     t.integer "book_id", null: false
     t.integer "user_id", null: false
+    t.index ["user_id", "book_id"], name: "index_books_users_on_user_id_and_book_id"
   end
 
   create_table "users", force: :cascade do |t|

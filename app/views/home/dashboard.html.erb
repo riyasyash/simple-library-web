@@ -15,3 +15,18 @@
     </ul>
   </div>
 </div>
+
+<%if @books %>
+
+ <div id ="grid">
+  <% @books.each do |books| %>
+  <ul>
+    <li>
+      <img src="<%=books.small_thumbnail%>" />
+      <h3><%=books.title%></h3>
+        <%= link_to "Return", return_book_path(:isbn => books.isbn),method: :delete, :class => 'btn btn-primary'%>
+    </li>
+  </ul>
+  <%end%>
+</div>
+<%end%>

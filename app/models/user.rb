@@ -1,6 +1,6 @@
 class User < ApplicationRecord
+  has_and_belongs_to_many :books
 
-  self.primary_key = "uid"
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider

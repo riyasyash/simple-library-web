@@ -34,4 +34,16 @@ class BooksController < ApplicationController
     end
     redirect_to '/dashboard'
   end
+
+  def return_book
+    isbn = params[:isbn]
+    book = Book.find_by_isbn(isbn)
+    if book
+      response,status = book.return_book(current_user)
+    else
+      response,status = 'Book not found',404
+    end
+    redirect_to '/dashboard'
+  end
+
 end

@@ -8,7 +8,7 @@
       <img src="<%=books.small_thumbnail%>" />
       <h3><%=books.title%></h3>
       <%if books.available > 0%>
-        <%= link_to "Checkout", checkout_book_path(:isbn => books.isbn),method: :post, :class => 'btn btn-primary'%>
+        <%= link_to "Borrow", checkout_book_path(:isbn => books.isbn),method: :post, :class => 'btn btn-primary'%>
       <%else%>
         <%= link_to "Request", request_book_path(:isbn => books.isbn),:class => 'btn btn-primary'%>
       <%end%>

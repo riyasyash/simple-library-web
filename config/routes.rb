@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post 'books/create' ,to: 'books#create', as: 'create_book'
   get  'books', to: 'books#list', as: 'book_list'
   post 'books/:isbn/checkout', to: 'books#checkout', as: 'checkout_book'
+  delete 'books/:isbn/return', to: 'books#return_book', as: 'return_book'
   get  'books/:isbn/request',to: 'books#request_book', as: 'request_book'
 
   get 'auth/:provider/callback', to: 'sessions#create'
