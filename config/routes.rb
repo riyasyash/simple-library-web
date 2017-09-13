@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   get 'index', to: 'home#index', as: 'index'
   get 'dashboard', to: 'home#dashboard', as:'dashboard'
 
+  post 'notifications/:userId', to: 'notifications#create', as: 'create_notification'
+  get  'notifications/:userId', to: 'notifications#list', as: 'list_notification'
+  delete 'notifications/:id', to: 'notifications#delete', as: 'delete_notification'
+
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
 
