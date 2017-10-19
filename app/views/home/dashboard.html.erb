@@ -1,19 +1,6 @@
 <div class="dropdown" id="controls">
-  <button id="home" class="btn btn-primary dropdown-toggle" type="button">
-    <span class="glyphicon glyphicon-home" aria-hidden="true"> Home </span>
-  </button>
-  <button id="listBooks" class="btn btn-primary dropdown-toggle" type="button">
-    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"> Books</span>
-  </button>
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-      <span class="glyphicon glyphicon-bell" aria-hidden="true"> Notifications</span>
-    </button>
-    <ul class="dropdown-menu">
-      <li><a href="#">HTML<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
-      <li><a href="#">CSS<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
-      <li><a href="#">JavaScript<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
-    </ul>
-  </div>
+  <%= button_to "Home", index_path, method: :get ,class: "button"%>
+  <%= button_to "Books", book_list_path, method: :get,class: "button"%>
 </div>
 
 <%if @books %>
