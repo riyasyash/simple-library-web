@@ -13,7 +13,6 @@ $(document).ready(function(){
           toastr.success('Book Added');
           $('#loading').hide();
           $('#modalBody').hide();
-          console.log(data);
           var data_hash = data;
           $('#bookThumbnail').attr("src",data_hash.small_thumbnail);
           document.getElementById('book_title').innerHTML=data_hash.title;
@@ -42,7 +41,10 @@ $(document).ready(function(){
   });
 
   $('#closeModal').click(function(){
-    $("#addBookModal").removeData('bs.modal');
+    $('#bookDetails').hide();
+    $('#modalBody').show();
+    document.getElementById('addBookForm').reset();
+    $('#addBookForm').show();
   });
 
 
