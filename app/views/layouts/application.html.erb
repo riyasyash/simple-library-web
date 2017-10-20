@@ -5,20 +5,27 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
     <div id="bg">
     </div>
-    <div id="nav">
-      <% if current_user %>
-        <font color="white">Signed in as <strong><%= current_user.name %></strong>!</font>
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
-      <% else %>
-        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-      <% end %>
-    </div>
+    <nav class="navbar navbar-default" role="navigation">
+      <div id="nav">
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+            <li><font color="#D2691E">Signed in as <strong><%= current_user.name %></strong>!</font></li>
+              <%= link_to "Sign out", signout_path, id: "sign_out" %>
+            <% else %>
+              <li><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" ,class:"btn btn-google"%></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div>
     <%= yield %>
     </div>
-  </body>
+     </body>
 </html>

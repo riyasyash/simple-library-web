@@ -1,18 +1,28 @@
-<button id="home" class="btn btn-primary dropdown-toggle" type="button">
+<center><button id="home" class="btn btn-primary dropdown-toggle" type="button">
   <span class="glyphicon glyphicon-home" aria-hidden="true"> Home </span>
-</button>
- <div id="grid">
+</button></center>
+      
+<div class="grid grid-pad">
   <% @books.each do |books| %>
-  <ul>
-    <li>
-      <img src="<%=books.small_thumbnail%>" />
-      <h3><%=books.title%></h3>
-      <%if books.available > 0%>
-        <%= link_to "Borrow", checkout_book_path(:isbn => books.isbn),method: :post, :class => 'btn btn-primary'%>
-      <%else%>
-        <%= link_to "Request", request_book_path(:isbn => books.isbn),:class => 'btn btn-primary'%>
-      <%end%>
-    </li>
-  </ul>
+    
+    <div class="col-1-5">
+      <div class="content">
+      <div class="tip">
+        <img class="bookimage" src="<%=books.thumbnail%>" alt="Thumbnail" width=120px></img>
+          <h4 class="card-title"><%=books.title%></h4>
+          
+          <span><p><%=books.description%></p></span>
+          </div>
+          <%if books.available > 0%>
+            <small class="text-muted">
+              <%= link_to "Borrow", checkout_book_path(:isbn => books.isbn),method: :post, :class => 'btn btn-primary'%>
+            </small>
+          <%else%>
+            <small class="text-muted">
+              <%= link_to "Request", request_book_path(:isbn => books.isbn),:class => 'btn btn-primary'%>
+            </small>
+          <%end%>
+      </div>
+    </div>
   <%end%>
 </div>
