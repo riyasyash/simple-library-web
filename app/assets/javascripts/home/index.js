@@ -1,5 +1,7 @@
-$(document).ready(function(){
+var ready = function(){
+
   $("#saveBook").click(function(){
+    console.log('clicked');
     $('#addBookForm').hide();
     if($("#isbn").val()!=""){
       $('#loading').show();
@@ -48,4 +50,5 @@ $(document).ready(function(){
   });
 
 
-});
+};
+$(document).on('turbolinks:load',ready);
