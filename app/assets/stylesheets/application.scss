@@ -120,12 +120,15 @@ div:hover.tip span {
 	background: #368AE0;
     border: 2px solid transparent;
     color: #fff;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
 }
 .myButtonGrey {
 	display: inline-block;
     margin-top: 1em;
     text-decoration: none;
-    color: #545454;
+    // color: #545454;
     font-family: Avenir-Light;
     font-size: 0.85em;
     border: 2px solid #A0A0A0;
@@ -137,9 +140,10 @@ div:hover.tip span {
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
 	opacity: 0.8;
-	background: #545454;
-    border: 2px solid transparent;
-    color: #fff;
+    color: #545454;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
 }
 ul.topnav {
     list-style-type: none;
