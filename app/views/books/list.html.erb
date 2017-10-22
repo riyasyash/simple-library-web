@@ -9,7 +9,7 @@
         <%if books.available > 0%>
           <%= link_to "Borrow", checkout_book_path(:isbn => books.isbn),method: :post, :class => 'myButton'%>
         <%else%>
-          <%= link_to "Request", request_book_path(:isbn => books.isbn),:class => 'myButton'%>
+          <%= link_to "Request", request_book_path(:isbn => books.isbn),:class => 'myButtonGrey'%>
         <%end%>
       </div>
   <%end%>

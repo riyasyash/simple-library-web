@@ -31,13 +31,15 @@
 	width: 95%;
 	display: grid;
 	grid-gap: 10px;
-	grid-template-columns: repeat(5, 19%);
+    grid-template-columns: repeat(5, 19%);
+    // z-index: -1;
 }
 .gridContent {
-	text-align: center;
-}
+    text-align: center;
+    z-index: 0;
+    }
 .gridContent:hover {
-	background: rgb(49, 150, 209);
+	background: rgb(238, 247, 252);
 }
 div.tip {
     position: relative;
@@ -116,6 +118,26 @@ div:hover.tip span {
     -moz-transition: all 1s;
 	opacity: 0.8;
 	background: #368AE0;
+    border: 2px solid transparent;
+    color: #fff;
+}
+.myButtonGrey {
+	display: inline-block;
+    margin-top: 1em;
+    text-decoration: none;
+    color: #545454;
+    font-family: Avenir-Light;
+    font-size: 0.85em;
+    border: 2px solid #A0A0A0;
+    cursor: pointer;
+    width: 29%;
+    padding: 0.85em;
+    text-align: center;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+	opacity: 0.8;
+	background: #545454;
     border: 2px solid transparent;
     color: #fff;
 }

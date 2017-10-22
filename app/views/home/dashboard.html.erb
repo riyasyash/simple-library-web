@@ -1,20 +1,13 @@
 <%if @books %>
-
-<div class="container">
- <% @books.each do |books| %>
-  
-  <div class="gridContent">
-    <div class="content">
-      <img class="card-img-top" src="<%=books.small_thumbnail%>" alt="Card image cap" width=120px height=180px>
-      <div class="card-block">
-        <h4 class="card-title"><%=books.title%></h4>
+  <div class="container">
+    <% @books.each do |books| %>
+      <div class="gridContent">
+        <img class="card-img-top" src="<%=books.small_thumbnail%>" alt="Card image cap" width=120px height=180px>
+            <h4 class="card-title"><%=books.title%></h4>
+        <%puts books.title%>
+            <%= link_to "Return", return_book_path(:isbn => books.isbn),method: :delete, :class => 'myButton'%>
       </div>
-      <div class="card-footer">
-        <small class="text-muted"><%= link_to "Return", return_book_path(:isbn => books.isbn),method: :delete, :class => 'myButton'%></small>
-      </div>
-    </div>
+    <%end%>
   </div>
-  <%end%>
-</div>
 <%end%>
 
