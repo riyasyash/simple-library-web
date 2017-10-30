@@ -1,10 +1,12 @@
 <div class="container">
   <% @books.each do |books| %>
       <div class="gridContent">
+        <div class="card">
         <div class="tip">
-          <img class="bookimage" src="<%=books.thumbnail%>" alt="Thumbnail" width=100px></img>
-          <h4 class="card-title"><%=books.title%></h4>
+          <img class="bookimage" src="<%=books.thumbnail%>" alt="Thumbnail" width=100px height=150px></img>
+          <h5 class="card-title"><%=books.title%></h5>
           <span><p><%=books.description%></p></span>
+        </div>
         </div>
         <%if books.available > 0%>
           <%= link_to "Borrow", checkout_book_path(:isbn => books.isbn),method: :post, :class => 'myButton'%>

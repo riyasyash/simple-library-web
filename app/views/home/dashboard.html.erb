@@ -1,13 +1,16 @@
+<p id="notice"><%= notice %></p>
+
 <%if @books %>
   <div class="container">
     <% @books.each do |books| %>
       <div class="gridContent">
-        <img class="card-img-top" src="<%=books.small_thumbnail%>" alt="Card image cap" width=120px height=180px>
-            <h4 class="card-title"><%=books.title%></h4>
+      <div class="card">
+        <img class="card-img-top" src="<%=books.small_thumbnail%>" alt="Card image cap" width=100px height=150px>
+            <h5 class="card-title"><%=books.title%></h4>
         <%puts books.title%>
+        </div>
             <%= link_to "Return", return_book_path(:isbn => books.isbn),method: :delete, :class => 'myButton'%>
       </div>
     <%end%>
   </div>
 <%end%>
-
