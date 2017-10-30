@@ -1,6 +1,7 @@
 var ready = function(){
 
-  $("#saveBook").click(function(){
+  $("#saveBook").click(function(e){
+    e.preventDefault();
     $('#addBookForm').hide();
     if($("#isbn").val()!=""){
       $('#loading').show();

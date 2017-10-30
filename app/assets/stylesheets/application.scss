@@ -29,14 +29,17 @@
 
 .container {
 	width: 95%;
-	display: grid;
-	grid-gap: 10px;
-    grid-template-columns: repeat(5, 19%);
-    // z-index: -1;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, 19%);
 }
 .gridContent {
     text-align: center;
-    z-index: 0;
+    float: left;
+    margin: 0 10px 20px 0;
+    border: 1px solid #a9c6f1;
+    border-radius: 5px;
+    padding: 5px;
     }
 .gridContent:hover {
 	background: rgb(238, 247, 252);
@@ -123,6 +126,7 @@ div:hover.tip span {
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
     border-radius: 28px;
+    outline: none;
 }
 .myButtonGrey {
 	display: inline-block;
