@@ -23,11 +23,7 @@ var ready = function(){
           // alert('success');
         },
         error: function(data) {
-          $('#bookDetails').hide();
-          $('#modalBody').show();
-          $('#loading').hide();
-          document.getElementById('addBookForm').reset();
-          $('#addBookForm').show();
+          resetAddBookModal();
           $('#addBookModal').modal('hide');
           toastr.error('Book creation failed');
         }
@@ -35,11 +31,7 @@ var ready = function(){
       return false;
     }
     else{
-      $('#bookDetails').hide();
-      $('#modalBody').show();
-      $('#loading').hide();
-      document.getElementById('addBookForm').reset();
-      $('#addBookForm').show();
+      resetAddBookModal();
       $('#addBookModal').modal('hide');
       toastr.error('Book creation failed');
     }
@@ -50,12 +42,17 @@ var ready = function(){
   });
 
   $('#closeModal').click(function(){
-    $('#bookDetails').hide();
-    $('#modalBody').show();
-    document.getElementById('addBookForm').reset();
-    $('#addBookForm').show();
+    resetAddBookModal();
   });
 
 
 };
 $(document).on('turbolinks:load',ready);
+
+function resetAddBookModal(){
+  $('#bookDetails').hide();
+  $('#modalBody').show();
+  $('#loading').hide();
+  document.getElementById('addBookForm').reset();
+  $('#addBookForm').show();
+}
