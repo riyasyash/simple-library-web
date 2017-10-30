@@ -13,8 +13,8 @@ class Book < ApplicationRecord
     book.title = book_hash["items"][0]["volumeInfo"]["title"]
     book.subtitle = book_hash["items"][0]["volumeInfo"]["subtitle"]
     authors = ""
-    if book_hash["items"][0]["volumeInfo"]["authors"].present? 
-      book.authors = book_hash["items"][0]["volumeInfo"]["authors"].join(',') 
+    if book_hash["items"][0]["volumeInfo"]["authors"].present?
+      book.authors = book_hash["items"][0]["volumeInfo"]["authors"].join(',')
     else
       book.authors = 'unknown'
     end
@@ -32,15 +32,26 @@ class Book < ApplicationRecord
     return book
   end
 
+  def owned_by(book,user)
+      if user.books.include?(book)
+        return true
+      end
+      return false
+  end
+
   def checkout(user)
     begin
-      if self.available > 0
-        self.available -= 1
-        self.save
-        user.books << self
-        return 'successfuly checked out',200
+      if owned_by(self,user)
+        return 'you already have this book with you',405
       else
-        return 'book not available',404
+        if self.available > 0
+          self.available -= 1
+          self.save
+          user.books << self
+          return 'successfuly checked out',200
+        else
+          return 'book not available',404
+        end
       end
     rescue
         return 'error occured during checkout',400

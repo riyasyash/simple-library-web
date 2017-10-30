@@ -1,7 +1,6 @@
 var ready = function(){
 
   $("#saveBook").click(function(){
-    console.log('clicked');
     $('#addBookForm').hide();
     if($("#isbn").val()!=""){
       $('#loading').show();
@@ -24,17 +23,25 @@ var ready = function(){
           // alert('success');
         },
         error: function(data) {
+          $('#bookDetails').hide();
+          $('#modalBody').show();
           $('#loading').hide();
-          $('#addBookModal').hide();
-          alert('failure');
+          document.getElementById('addBookForm').reset();
+          $('#addBookForm').show();
+          $('#addBookModal').modal('hide');
+          toastr.error('Book creation failed');
         }
       });
       return false;
     }
     else{
+      $('#bookDetails').hide();
+      $('#modalBody').show();
       $('#loading').hide();
-      $('#addBookModal').hide();
-      toastr.error('Incomplete input');
+      document.getElementById('addBookForm').reset();
+      $('#addBookForm').show();
+      $('#addBookModal').modal('hide');
+      toastr.error('Book creation failed');
     }
   });
 

@@ -10,9 +10,15 @@ class BooksController < ApplicationController
     count = params["count"].to_i
     body = HTTP.get('https://www.googleapis.com/books/v1/volumes?q=isbn:'+isbn).body
     book_hash = JSON.parse(body)
-    book = Book.add_to_library(isbn,count,book_hash)
-    respond_to do |format|
-      format.json  { render :json => book.to_json }
+    if book_hash['totalItems']!=0
+      book = Book.add_to_library(isbn,count,book_hash)
+      respond_to do |format|
+        format.json  { render :json => book.to_json, :status=>200}
+      end
+    else
+      respond_to do |format|
+        format.json  { render :json => book.to_json ,:status=>400}
+      end
     end
   end
 
@@ -43,7 +49,7 @@ class BooksController < ApplicationController
     else
       response,status = 'Book not found',404
     end
-    redirect_to '/dashboard'
+    redirect_to dashboard_path
   end
 
 end
