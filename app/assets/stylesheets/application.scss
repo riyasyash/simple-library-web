@@ -58,6 +58,8 @@ div.tip span {
     z-index: 100;
     background: #a9c6f1;
     color: rgb(255, 255, 255);
+    overflow-y: auto;
+    max-height: 300px;
     -moz-border-radius: 5px; /* this works only in camino/firefox */
     -webkit-border-radius: 5px; /* this is just for Safari */
 }
