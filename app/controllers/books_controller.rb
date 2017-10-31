@@ -27,7 +27,13 @@ class BooksController < ApplicationController
   end
 
   def request_book
-    redirect_to '/dashboard'
+    isbn = params[:isbn]
+    user_id = params[:userId]
+    book = Book.find_by_isbn(isbn)
+    response,code = book.request_book(user_id,current_user)
+    respond_to do |format|
+      format.json  { render :json => {msg:response} ,:status=>code}
+    end
   end
 
   def checkout

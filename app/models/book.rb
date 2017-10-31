@@ -73,4 +73,26 @@ class Book < ApplicationRecord
     end
   end
 
+  def request_book(user_id,current_user)
+    begin
+      user = User.find_by_id(user_id)
+      if user
+        if current_user.books.include?(self)
+          return "you already have this book with you",405
+        else
+          if user.books.include?(self)
+            response,code = user.add_book_request(self,current_user)
+            return response,code
+          else
+            return "User does not have this book",404
+          end
+        end
+      else
+        return "user not found",404
+      end
+    rescue
+      return "request submission failed",400
+    end
+  end
+
 end
