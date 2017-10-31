@@ -52,4 +52,11 @@ class BooksController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def list_book_users
+    isbn = params[:isbn]
+    book = Book.find_by_isbn(isbn)
+    respond_to do |format|
+      format.json { render :json => book.users.to_json ,:status=>200 }
+    end
+  end
 end

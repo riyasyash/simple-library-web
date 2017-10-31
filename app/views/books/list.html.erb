@@ -11,8 +11,36 @@
         <%if books.available > 0%>
           <%= link_to "Borrow", checkout_book_path(:isbn => books.isbn),method: :post, :class => 'myButton'%>
         <%else%>
-          <%= link_to "Request", request_book_path(:isbn => books.isbn),:class => 'myButtonGrey'%>
+          <Button class="myButtonGrey" data-toggle="modal" data-target="#requestBookModal" data-isbn=<%=books.isbn%>>Request</Button>
         <%end%>
       </div>
   <%end%>
+</div>
+<!--Modal -->
+<div class="modal fade" id="requestBookModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" value="blah">Request Book</h4>
+      </div>
+      <div class="modal-body" id="modalBody">
+      <table id="bookUserTable">
+      <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Borrowed On</th>
+        </tr>
+      </thead>
+      <tbody id="tBody"></tbody>
+      
+  </table>
+      </div>
+      <div class="modal-body" id="bookDetails" hidden=true>
+      </div>
+    </div>
+  </div>
 </div>

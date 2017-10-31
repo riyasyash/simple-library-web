@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'books/:isbn/checkout', to: 'books#checkout', as: 'checkout_book'
   delete 'books/:isbn/return', to: 'books#return_book', as: 'return_book'
   get  'books/:isbn/request',to: 'books#request_book', as: 'request_book'
+  get  'books/:isbn/users', to: 'books#list_book_users', as: 'list_book_users'
 
   get 'auth/:provider/callback', to: 'sessions#create'
   # get 'auth/failure', to: redirect('/')

@@ -134,7 +134,6 @@ div:hover.tip span {
 	display: inline-block;
     margin-top: 1em;
     text-decoration: none;
-    // color: #545454;
     font-family: Avenir-Light;
     font-size: 0.85em;
     border: 2px solid #A0A0A0;
@@ -150,6 +149,7 @@ div:hover.tip span {
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
     border-radius: 28px;
+    outline: none;
 }
 ul.topnav {
     list-style-type: none;
@@ -176,4 +176,26 @@ ul.topnav li a.active {background-color: #4CAF50;}
 ul.topnav li.right {float: right;}
 .card {
     height: 250px;
+}
+#bookUserTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#bookUserTable td, #customers th {
+    border: 1px solid rgb(179, 207, 240);
+    padding: 8px;
+}
+
+#bookUserTable tr:nth-child(even){background-color: rgb(131, 179, 235)2;}
+
+#bookUserTable tr:hover {background-color: rgb(155, 195, 248);}
+
+#bookUserTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #368AE0;
+    color: white;
 }
