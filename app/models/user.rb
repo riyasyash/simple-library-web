@@ -18,7 +18,6 @@ class User < ApplicationRecord
     begin
       notification = Notification.book_request_notification(book,current_user,self)
       notification.save
-      byebug
       self.received_notifications << notification
       return "request sent",201
     rescue

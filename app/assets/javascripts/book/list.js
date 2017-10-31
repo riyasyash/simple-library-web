@@ -41,7 +41,7 @@ function requestBook(isbn,uid){
         type: "POST",
         url: "/books/"+isbn+"/users/"+uid+"/request",
         success: function(data){
-            toastr.success(data.responseJSON.msg);
+            toastr.success(data.msg);
         },
         error: function(data) {  
             toastr.error(data.responseJSON.msg);
