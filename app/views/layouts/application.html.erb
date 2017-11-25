@@ -13,13 +13,22 @@
     <nav class="navbar navbar-default" role="navigation">
           <ul class="topnav">
             <% if current_user %>
+            
             <li class="right"><font color="#D9853B">Signed in as <strong><%= current_user.name %></strong>!</font>
               <%= link_to "signout", signout_path, id: "sign_out" %>
+            <li class="notificationsWrapper right">
+                <div class="notificationCount"><%=current_user.received_notifications.count%></div>
+                <div id="notificationButton"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span></div>
+                <div class="notifications">
+                <h3>Notifications</h3>
+                </div>              
+            </li>
+            
             <% end %>
             <li>
             <%= link_to( image_tag("logo.png", :class => "logo"), index_path) %>
             </li>
-          
+
           <% if current_user %>
           <li class="active">
             <%= link_to "Dashboard", dashboard_path, method: :get%>

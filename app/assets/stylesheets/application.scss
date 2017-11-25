@@ -37,10 +37,10 @@
     text-align: center;
     float: left;
     margin: 0 10px 20px 0;
-    border: 1px solid #a9c6f1;
+    // border: 1px solid #a9c6f1;
     border-radius: 5px;
     padding: 5px;
-    box-shadow:0px 1px 10px 1px rgb(102, 100, 100); 
+    // box-shadow:0px 1px 10px 1px rgb(102, 100, 100); 
     
     
     }
@@ -184,10 +184,11 @@ ul.topnav li.right {float: right;}
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    border: 1px;
 }
 
 #bookUserTable td, #customers th {
-    border: 1px solid rgb(179, 207, 240);
+    // border: 1px solid rgb(179, 207, 240);
     padding: 8px;
 }
 
@@ -202,3 +203,57 @@ ul.topnav li.right {float: right;}
     background-color: #368AE0;
     color: white;
 }
+.glyphicon.glyphicon-bell {
+    font-size: 30px;
+    color: #368AE0;
+    text-shadow:  0 0 40px #368AE0;
+    margin-right: 50px;
+    background: white;
+    border-radius: 50%;
+    border: #368AE0;
+}
+.notificationCount {
+    display:block;
+    position:absolute;
+    // background:#E1141E;
+    color:#E1141E;
+    font-size:14px;
+    font-weight:3px;
+    padding:1px 3px;
+    margin:-8px 5px 1px 25px;
+    margin-top: 1px;
+    border-radius:2px;
+    -moz-border-radius:2px; 
+    -webkit-border-radius:2px;
+    z-index:1;
+}
+.notifications {
+    display: none;
+    width:430px;
+    position:absolute;
+    top:30px;
+    // left:0;
+    float: right;
+    background:rgb(212, 227, 245);
+    border:solid 1px rgba(100, 100, 100, .20);
+    -webkit-box-shadow:0 3px 8px rgba(0, 0, 0, .20);
+    z-index: 0;
+    overflow-y: auto;
+}
+.notificationsWrapper{
+    position:relative;
+    float: right;
+}
+.requestBookButton {
+    background: none;
+    border: none;
+    width: 1px;
+}
+.bookimage {
+    display: inline-block;
+    box-shadow: 5px 5px 20px #333;
+    margin: 10px;
+  }
+  
+  .bookbookimage img { vertical-align: middle; }
+  
