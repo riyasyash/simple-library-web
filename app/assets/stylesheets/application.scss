@@ -32,6 +32,8 @@
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(5, 19%);
+  z-index: 1;
+  position: relative;
 }
 .gridContent {
     text-align: center;
@@ -40,9 +42,9 @@
     // border: 1px solid #a9c6f1;
     border-radius: 5px;
     padding: 5px;
-    // box-shadow:0px 1px 10px 1px rgb(102, 100, 100); 
-    
-    
+    // box-shadow:0px 1px 10px 1px rgb(102, 100, 100);
+
+
     }
 .gridContent:hover {
 	background: rgb(238, 247, 252);
